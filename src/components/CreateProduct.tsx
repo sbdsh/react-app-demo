@@ -55,7 +55,7 @@ export function CreateProduct({ onCreate}: CreateProductProps) {
          {error && <ErrorMessage error={error} />}
          <div className='w-full flex justify-center'>
             <button type="submit" className="
-            py-2 px-4 justify-center rounded border text-white bg-gray-400 
+            py-2 px-4 justify-center rounded border text-white bg-gray-500 
             hover:bg-red-500 hover:text-yellow-200 hover:underline
             ">Create</button>
          </div>

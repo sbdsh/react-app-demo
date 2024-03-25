@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { products } from '../data/products'
 import { IProduct } from '../models'
 
 interface ProductProps {
@@ -8,9 +9,9 @@ interface ProductProps {
 export function Product({ product }: ProductProps) {
    const [details, setDetails] = useState(false)
 
-   const btnBgClassName = details ? 'bg-yellow-400' : 'bg-blue-400'
+   const btnBgClassName = details ? 'bg-red-500 text-yellow-200 hover:underline' : 'bg-gray-500 text-white hover:underline'
 
-   const btnClasses = ['py-2 px-4 border', btnBgClassName]
+   const btnClasses = ['py-2 px-4 rounded border', btnBgClassName]
 
    return (
       <div className="border py-2 px-4 rounded flex flex-col items-center mb-2">
@@ -28,7 +29,7 @@ export function Product({ product }: ProductProps) {
 
          { details && <div>
             <p>{product.description}</p>
-            <p>Rate: <span style={{ fontWeight: 'bold'}}>{product.rating.rate}</span></p>
+            { product.rating && <p>Rate: <span style={{ fontWeight: 'bold'}}>{product.rating.rate}</span></p>}
          </div>}
          {/* <p>{product.description}</p> */}
       </div>
